@@ -1,4 +1,4 @@
-# Perception-Oriented Video Frame Interpolation via Asymmetric Blending
+# Perception-Oriented Video Frame Interpolation via Asymmetric Blending [:link:](https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.html)
 
 [Guangyang Wu](https://scholar.google.com/citations?user=lgBxzzcAAAAJ&hl=en),
 [Xin Tao](https://scholar.google.com/citations?hl=en&user=sQ30WyUAAAAJ),
@@ -7,17 +7,17 @@
 [Xiaohong Liu](https://scholar.google.com/citations?user=Tq2hoMQAAAAJ&hl=en),
 [Qingqing Zheng](https://scholar.google.com/citations?hl=en&user=V3cdGQcAAAAJ)
 
-**[In CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf)**
+**In CVPR 2024**
 
 This repository represents the official implementation of the paper titled "Perception-Oriented Video Frame Interpolation via Asymmetric Blending", also denoted as "PerVFI".
 
 [![Website](doc/badge-website.svg)](https://mulns.github.io/pervfi-page/)
 [![Paper](https://img.shields.io/badge/CVPR2024-PDF-b31b1b)](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf)
+[![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-green)](https://huggingface.co/Mulns/PerVFI-v1-0)
 [![License](https://img.shields.io/badge/License-Apache--2.0-929292)](https://www.apache.org/licenses/LICENSE-2.0)
 <!-- [![Hugging Face (LCM) Space](https://img.shields.io/badge/🤗%20Hugging%20Face%20(LCM)-Space-yellow)](https://huggingface.co/spaces/prs-eth/marigold-lcm) -->
 <!-- [![Hugging Face (LCM) Model](https://img.shields.io/badge/🤗%20Hugging%20Face%20(LCM)-Model-green)](https://huggingface.co/prs-eth/marigold-lcm-v1-0)  -->
 <!-- [![Open In Colab](doc/badges/badge-colab.svg)](https://colab.research.google.com/drive/12G8reD13DdpMie5ZQlaFNo2WCGeNUH-u?usp=sharing) -->
-<!-- [![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-green)](https://huggingface.co/prs-eth/marigold-v1-0) -->
 <!-- [![GitHub](https://img.shields.io/github/stars/prs-eth/Marigold?style=default&label=GitHub%20★&logo=github)](https://github.com/prs-eth/Marigold) -->
 <!-- [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)]() -->
 <!-- [![Docker](doc/badges/badge-docker.svg)]() -->
