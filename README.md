@@ -1,6 +1,13 @@
-# [Perception-Oriented Video Frame Interpolation via Asymmetric Blending](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf)
+# Perception-Oriented Video Frame Interpolation via Asymmetric Blending
 
-**CVPR 2024**
+[Guangyang Wu](https://scholar.google.com/citations?user=lgBxzzcAAAAJ&hl=en),
+[Xin Tao](https://scholar.google.com/citations?hl=en&user=sQ30WyUAAAAJ),
+[Changlin Li](https://scholar.google.com/citations?hl=en&user=wOQjqCMAAAAJ),
+[Wenyi Wang](https://scholar.google.com/citations?user=K4wurXEAAAAJ&hl=en),
+[Xiaohong Liu](https://scholar.google.com/citations?user=Tq2hoMQAAAAJ&hl=en),
+[Qingqing Zheng](https://scholar.google.com/citations?hl=en&user=V3cdGQcAAAAJ)
+
+**[In CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf)**
 
 This repository represents the official implementation of the paper titled "Perception-Oriented Video Frame Interpolation via Asymmetric Blending", also denoted as "PerVFI".
 
@@ -14,13 +21,6 @@ This repository represents the official implementation of the paper titled "Perc
 <!-- [![GitHub](https://img.shields.io/github/stars/prs-eth/Marigold?style=default&label=GitHub%20★&logo=github)](https://github.com/prs-eth/Marigold) -->
 <!-- [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)]() -->
 <!-- [![Docker](doc/badges/badge-docker.svg)]() -->
-
-[Guangyang Wu](https://scholar.google.com/citations?user=lgBxzzcAAAAJ&hl=en),
-[Xin Tao](https://scholar.google.com/citations?hl=en&user=sQ30WyUAAAAJ),
-[Changlin Li](https://scholar.google.com/citations?hl=en&user=wOQjqCMAAAAJ),
-[Wenyi Wang](https://scholar.google.com/citations?user=K4wurXEAAAAJ&hl=en),
-[Xiaohong Liu](https://scholar.google.com/citations?user=Tq2hoMQAAAAJ&hl=en),
-[Qingqing Zheng](https://scholar.google.com/citations?hl=en&user=V3cdGQcAAAAJ)
 
 We present PerVFI, a novel paradigm for perception-oriented video frame interpolation.
 
