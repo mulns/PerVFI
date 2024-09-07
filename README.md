@@ -11,6 +11,7 @@
 
 This repository represents the official implementation of the paper titled "Perception-Oriented Video Frame Interpolation via Asymmetric Blending", also denoted as "PerVFI".
 
+[![Benchmark](https://img.shields.io/badge/Benchmark-Repo-yellow)](https://github.com/mulns/VFIBenchmark)
 [![Website](doc/badge-website.svg)](https://mulns.github.io/pervfi-page/)
 [![Paper](https://img.shields.io/badge/CVPR2024-PDF-b31b1b)](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf)
 [![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-green)](https://huggingface.co/Mulns/PerVFI-v1-0)
@@ -41,13 +42,14 @@ We present PerVFI, a novel paradigm for perception-oriented video frame interpol
 <a href="https://huggingface.co/spaces/toshas/marigold"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Space-yellow" height="16"></a> - try it out with your images for free!<br>
 2023-12-05: Added <a href="https://colab.research.google.com/drive/12G8reD13DdpMie5ZQlaFNo2WCGeNUH-u?usp=sharing"><img src="doc/badges/badge-colab.svg" height="16"></a> - dive deeper into our inference pipeline!<br> -->
 
+2024-9-7: [VFIBenchmark](https://github.com/mulns/VFIBenchmark) is released! Feel free to reproduce metrices listed in paper.
+
 2024-6-13: Paper Accepted! <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Perception-Oriented_Video_Frame_Interpolation_via_Asymmetric_Blending_CVPR_2024_paper.pdf"><img src="https://img.shields.io/badge/CVPR2024-PDF-blue" height="16"></a>. Release the inference code (this repository).
 
 2024-6-1: Added arXiv version: <a href="https://arxiv.org/abs/2404.06692"><img src="https://img.shields.io/badge/arXiv-PDF-b31b1b" height="16"></a>. 
 
 ## ∞ TODO
 - :exclamation: 🔜 Inference code for customized flow estimator.
-- :exclamation: Release VFI-Benchmark, a codebase reproducing all scores listed in paper (*this will take some time, as we are committed to providing a modularized and detailed implementation*).
 - 🔜 Google Colab demo.
 - 🔜 Online interactive demo.
 - Hugging Face Space (optional).
@@ -176,7 +178,7 @@ python run.py \
 
 ## 🦿 Evaluation on test datasets <a name="evaluation"></a>
 
-Will be included in VFI-Benchmark (currently under crafting).
+Will be included in [VFI-Benchmark](https://github.com/mulns/VFIBenchmark).
 
 <!-- 
 Install additional dependencies:
