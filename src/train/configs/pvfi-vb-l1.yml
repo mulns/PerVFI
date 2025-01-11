@@ -1,0 +1,26 @@
+exp_name: PVFI-Vb-L1 # experiment name
+
+#### data loader
+dataset_cfg:
+  data_root: "./data/datasets/vimeo_triplet"
+  batch_size: 16 # in total
+  nb_data_worker: 8
+  of_method:
+    - 'raft'
+    - 'gmflow'
+
+#### network structures
+model_cfg:
+  version: vb
+
+### optimizer
+optimizer_cfg:
+  max_lr: 5.0e-4
+  loss: l1+0.2*lap+0.1*per
+  epochs: 64 # ~200000 iters
+
+### logger
+logger_cfg:
+  root: train-logs
+  save_interval: 100 # checkpointing rate (steps)
+  eval_interval: 500 # validating rate (steps)
