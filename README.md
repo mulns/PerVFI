@@ -49,7 +49,7 @@ We present PerVFI, a novel paradigm for perception-oriented video frame interpol
 2024-6-1: Added arXiv version: <a href="https://arxiv.org/abs/2404.06692"><img src="https://img.shields.io/badge/arXiv-PDF-b31b1b" height="16"></a>. 
 
 ## ∞ TODO
-- :exclamation: 🔜 Inference code for customized flow estimator.
+- 🔜 Inference code for customized flow estimator.
 - 🔜 Google Colab demo.
 - 🔜 Online interactive demo.
 - Hugging Face Space (optional).
@@ -106,8 +106,9 @@ We provide several ways to install the dependencies.
     After the installation, create the environment and install dependencies into it:
 
     ```bash
-    conda env create -f environment.yaml
+    conda env create -n pervfi
     conda activate pervfi
+    pip install -r requirements.txt
     ```
 
 2. **Using pip:** 
@@ -136,14 +137,16 @@ Download [pre-trained models](https://huggingface.co/Mulns/PerVFI-v1-0) and plac
 
 The [Default checkpoint](https://huggingface.co/Mulns/PerVFI-v1-0/blob/main/PerVFI/v00.pth) is trained only using Vimeo90K dataset. 
 ```bash
- python infer_video.py -m [OFE]+pervfi -data input -fps [OUT_FPS]
+cd src/test
+python infer_video.py -m [OFE]+pervfi -data input -fps [OUT_FPS]
 ```
 > **NOTE:** `OFE` is a placeholder for optical flow estimator name. In this repo, we support [RAFT](), [GMA](), [GMFlow](). You can also use your preferred flow estimator (future feature). `OUT_FPS` is a placeholder for frame rate (default to 10) of output video (maybe save with images).
 
 The [Vb checkpoint](https://huggingface.co/Mulns/PerVFI-v1-0/blob/main/PerVFI/vb.pth) (faster) replaces the normalizing flow-generator with a multi-scale decoder to achieve faster inference speed, though with a compromise in perceptual quality:
 
 ```bash
- python infer_video.py -m [OFE]+pervfi-vb -data input -fps [OUT_FPS]
+cd src/test
+python infer_video.py -m [OFE]+pervfi-vb -data input -fps [OUT_FPS]
  ```
 
 You can find all results in `output`. **Enjoy**!
@@ -209,42 +212,28 @@ Note: although the seed has been set, the results might still be slightly differ
 
 ## 🏋️ Training
 
-Comming Soon~
-<!-- 
-Based on the previously created environment, install extended requirements:
+Download training data from [vimeo_90k](https://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip).
 
+Activate the previously created environment.
+
+Set configuration parameters for the data directory within `src/train/configs/pvfi-***.yml`
+
+Download pretrained softmax-splatting [checkpoint](http://content.sniklaus.com/softsplat/network-lf.pytorch) into `src/train/checkpoints/`
+
+Run data preprocessing script to pre-estimate optical flows for each sample in dataset
 ```bash
-pip install -r requirements++.txt -r requirements+.txt -r requirements.txt
+cd src/train
+python prepare_optical_flow.py -m raft -r path-to-data-dir
+python prepare_optical_flow.py -m gmflow -r path-to-data-dir
 ```
-
-Set environment parameters for the data directory:
-
-```bash
-export BASE_DATA_DIR=YOUR_DATA_DIR  # directory of training data
-export BASE_CKPT_DIR=YOUR_CHECKPOINT_DIR  # directory of pretrained checkpoint
-```
-
-Download Stable Diffusion v2 [checkpoint](https://huggingface.co/stabilityai/stable-diffusion-2) into `${BASE_CKPT_DIR}`
-
-Prepare for [Hypersim](https://github.com/apple/ml-hypersim) and [Virtual KITTI 2](https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-2/) datasets and save into `${BASE_DATA_DIR}`. Please refer to [this README](script/dataset_preprocess/hypersim/README.md) for Hypersim preprocessing.
 
 Run training script
 
 ```bash
-python train.py --config config/train_marigold.yaml
+cd src/train
+sh train.sh
 ```
 
-Resume from a checkpoint, e.g.
-
-```bash
-python train.py --resume_from output/marigold_base/checkpoint/latest
-```
-
-Evaluating results
-
-Only the U-Net is updated and saved during training. To use the inference pipeline with your training result, replace `unet` folder in Marigold checkpoints with that in the `checkpoint` output folder. Then refer to [this section](#evaluation) for evaluation.
-
-**Note**: Although random seeds have been set, the training result might be slightly different on different hardwares. It's recommended to train without interruption. -->
 
 ## ✏️ Contributing
 

@@ -7,7 +7,7 @@ import warnings
 import torch
 from tqdm import tqdm
 
-from tools import IOBuffer, Tools
+from src.test.tools import IOBuffer, Tools
 
 warnings.simplefilter("ignore", UserWarning)
 warnings.simplefilter("ignore", FutureWarning)
@@ -69,7 +69,7 @@ videos = sorted(os.listdir(dstDir))
 
 
 ############ build VFI model ############
-from build_models import build_model
+from .build_models import build_model
 
 print("Building VFI model...")
 model, infer = build_model(args.method, device=DEVICE)

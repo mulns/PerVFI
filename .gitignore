@@ -1,2 +1,4 @@
 *pycache*
 .vscode
+*.zip
+*.pytorch
