@@ -66,12 +66,16 @@ class VimeoTriplet(Dataset):
 
 def main(args):
     NUM_THREAD = 16
-    source = "data/datasets/vimeo_triplet"
+    source = args.root
     method = args.method
     target = osp.join(source, "optical_flows", method)
     dataset = VimeoTriplet(source)
     dataloader = DataLoader(
-        dataset, batch_size=64, num_workers=4, pin_memory=True, drop_last=False
+        dataset,
+        batch_size=args.batch_size,
+        num_workers=4,
+        pin_memory=True,
+        drop_last=False,
     )
     write_buffer = Queue()
     p = Pool(NUM_THREAD, clear_write_buffer, (target, write_buffer))
@@ -111,5 +115,6 @@ if __name__ == "__main__":
         "--method", "-m", type=str, choices=["raft", "gmflow"], default="raft"
     )
     parser.add_argument("--root", "-r", type=str, default="data/datasets/vimeo_triplet")
+    parser.add_argument("--batch_size", "-b", type=int, default=96)
     args = parser.parse_args()
     main(args)

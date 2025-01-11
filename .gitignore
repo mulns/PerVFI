@@ -2,3 +2,5 @@
 .vscode
 *.zip
 *.pytorch
+*log*
+*.pth

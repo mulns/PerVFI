@@ -1,6 +1,7 @@
 """PerVFI: Soft-binary Blending for Photo-realistic Video Frame Interpolation
 
 """
+
 import accelerate
 import torch
 import torch.nn.functional as F
@@ -267,16 +268,16 @@ class Network(torch.torch.nn.Module):
         self.attentionMerge = AttentionMerge(dilate_size=dilate_size)
         self.multiscaleFuse = MultiscaleFuse(cond_c)
         self.condFLownet = CondFlowNet(cond_c, with_bn=False, train_1x1=True)
-        state_dict = {
-            k.replace("module.", ""): v
-            for k, v in torch.load(
-                "train-logs/PVFI-Vb-L1/pre-trained/best-lpips.pth"
-            ).items()
-        }
-        self.load_state_dict(state_dict, strict=False)
-        for n, p in self.named_parameters():
-            if not "condflownet" in n.lower():
-                p.requires_grad = False
+        # state_dict = {
+        #     k.replace("module.", ""): v
+        #     for k, v in torch.load(
+        #         "train-logs/PVFI-Vb-L1/pre-trained/best-lpips.pth"
+        #     ).items()
+        # }
+        # self.load_state_dict(state_dict, strict=False)
+        # for n, p in self.named_parameters():
+        #     if not "condflownet" in n.lower():
+        #         p.requires_grad = False
 
     def get_cond(self, inps: list, time: float = 0.5):
         tenOne, tenTwo, fflow, bflow = inps

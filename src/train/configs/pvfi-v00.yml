@@ -1,8 +1,8 @@
-exp_name: PVFI-Vb-L1 # experiment name
+exp_name: PVFI-V00 # experiment name
 
 #### data loader
 dataset_cfg:
-  data_root: "./data/datasets/vimeo_triplet"
+  data_root: "path_to_vimeo90k_dataset"
   batch_size: 16 # in total
   nb_data_worker: 8
   of_method:
@@ -11,13 +11,13 @@ dataset_cfg:
 
 #### network structures
 model_cfg:
-  version: vb
+  version: v00
 
 ### optimizer
 optimizer_cfg:
   max_lr: 5.0e-4
-  loss: l1+0.2*lap+0.1*per
-  epochs: 64 # ~200000 iters
+  loss: nll+0.1*lap+0.2*per
+  epochs: 96
 
 ### logger
 logger_cfg:

@@ -64,7 +64,7 @@ def train(ppl, train_data, val_data, args):
 
             ACC.wait_for_everyone()
             # print message during training
-            if ACC.is_local_main_process:
+            if ACC.is_local_main_process and (step <= 25 or step % 100 == 0):
                 for k, v in metric.items():
                     writer.add_scalar(k, v, step)
                 for i, m in enumerate(smasks):
@@ -274,6 +274,7 @@ def run(args):
 
     if dist.is_initialized():
         dist.destroy_process_group()
+
 
 if __name__ == "__main__":
     # **********************************************************#

@@ -218,13 +218,13 @@ Activate the previously created environment.
 
 Set configuration parameters for the data directory within `src/train/configs/pvfi-***.yml`
 
-Download pretrained softmax-splatting [checkpoint](http://content.sniklaus.com/softsplat/network-lf.pytorch) into `src/train/checkpoints/`
+Download pretrained Softmax-Splatting [checkpoint](http://content.sniklaus.com/softsplat/network-lf.pytorch), RAFT-sintel [checkpoint](https://drive.google.com/drive/folders/1sWDsfuZ3Up38EUQt7-JDTT1HcGHuJgvT) and GMFlow-sintel [checkpoint](https://drive.google.com/file/d/1d5C5cgHIxWGsFR1vYs5XrQbbUiZl9TX2/view) into `src/train/checkpoints/`
 
 Run data preprocessing script to pre-estimate optical flows for each sample in dataset
 ```bash
 cd src/train
-python prepare_optical_flow.py -m raft -r path-to-data-dir
-python prepare_optical_flow.py -m gmflow -r path-to-data-dir
+python prepare_optical_flow.py -m raft -r path_to_data_dir -b 96
+python prepare_optical_flow.py -m gmflow -r path_to_data_dir -b 96
 ```
 
 Run training script
